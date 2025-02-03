@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Raza Siraji - Official</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2d3436);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+            border: 3px solid #fff;
+            overflow: hidden;
+            transition: transform 0.5s;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        .logo:hover {
+            transform: rotateY(180deg) scale(1.1);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .btn {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .whatsapp { color: #25D366; }
+        .call { color: #00bcd4; }
+        .instagram { color: #e1306c; }
+        .youtube { color: #ff0000; }
+
+        .share-btn {
+            background: linear-gradient(45deg, #00bcd4, #e1306c);
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .share-btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            top: 0;
+            left: -100%;
+            transition: 0.3s;
+        }
+
+        .share-btn:hover::after {
+            left: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+            }
+        }
+
+        .username {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .3d-text {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5),
+                        -1px -1px 1px rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="your-logo-url.jpg" alt="Ahmed Raza Siraji Logo">
+        </div>
+
+        <h1 class="3d-text">Ahmed Raza Siraji</h1>
+        <h2>Naatkhaw</h2>
+
+        <div class="social-links">
+            <a href="tel:+1234567890" class="btn call">
+                <i class="fas fa-phone-alt"></i>
+                Call Now
+            </a>
+
+            <a href="https://wa.me/+1234567890" class="btn whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+                <span class="username">+92 123 4567890</span>
+            </a>
+
+            <a href="https://instagram.com/username" class="btn instagram">
+                <i class="fab fa-instagram"></i>
+                Instagram
+                <span class="username">@ahmed_raza_naat</span>
+            </a>
+
+            <a href="https://youtube.com/username" class="btn youtube">
+                <i class="fab fa-youtube"></i>
+                YouTube
+                <span class="username">/AhmedRazaOfficial</span>
+            </a>
+
+            <button class="btn share-btn" onclick="shareWebsite()">
+                <i class="fas fa-share-alt"></i>
+                Share Website
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function shareWebsite() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Ahmed Raza Siraji - Official',
+                    text: 'Check out the official website of Ahmed Raza Siraji',
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                })
+                .catch(console.error);
+            } else {
+                alert('Sharing is not supported in your browser. Please copy the URL manually.');
+            }
+        }
+
+        // Add hover effect to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseover', () => {
+                btn.style.transform = 'translateY(-3px) scale(1.02)';
+            });
+            
+            btn.addEventListener('mouseout', () => {
+                btn.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
