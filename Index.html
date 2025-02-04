@@ -33,12 +33,14 @@
             margin: 20px auto;
             border: 3px solid #fff;
             overflow: hidden;
-            transition: transform 0.5s;
-            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+            transition: transform 0.5s, box-shadow 0.5s, opacity 0.5s;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
         .logo:hover {
-            transform: rotateY(180deg) scale(1.1);
+            transform: scale(1.1); /* Logo thoda bada hoga, ulta nahi hoga */
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            opacity: 0.9; /* Thoda fade-in effect */
         }
 
         .logo img {
